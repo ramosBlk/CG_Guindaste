@@ -46,9 +46,11 @@ train_scene/
   camera.py             camera e controles
   geometry.py           malhas e geometria estatica
   math3d.py             transformacoes e matrizes
-  scene.py              recursos OpenGL e composicao/renderizacao
+  scene.py              recursos OpenGL e orquestracao da renderizacao
   settings.py           dimensoes e constantes da cena
   shaders.py            shaders GLSL
+  train_parts.py        composicao visual do trem e dos vagoes
+  crane_parts.py        composicao visual do guindaste e das caixas
 tests/
   test_animation.py     testes da logica temporal
 ```
