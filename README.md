@@ -20,8 +20,8 @@ aguarda o carregamento manual antes de continuar.
 ## Executar
 
 ```powershell
-python -m pip install -r requirements.txt
-python main.py
+py -m pip install -r requirements.txt
+py main.py
 ```
 
 No Python 3.14 wheel is available for `pygame`; the requirements install
