@@ -1,8 +1,10 @@
 """Configuracoes e dimensoes da cena."""
 
-WIDTH, HEIGHT = 1280, 800
+"""Para computadores mais fracos."""
+WIDTH, HEIGHT = 960, 600      
 
-SHADOW_SIZE = 2048
+"""Escala de Sombras , sua definição estava em 2048, mas foi reduzida para 512 para melhorar o desempenho em computadores mais fracos."""
+SHADOW_SIZE = 512
 
 TRACK_START_X, TRACK_END_X = -20.0, 20.0
 
