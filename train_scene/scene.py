@@ -300,4 +300,4 @@ class Scene:
         glBindTexture(GL_TEXTURE_2D, 0)
         glBindVertexArray(0)
         glUseProgram(0)
-        self.controls_hud.draw(width, height)
+        self.controls_hud.draw(width, height, paused=self.paused)
