@@ -23,7 +23,7 @@ Projeto de Computação Gráfica em Python com PyGame e OpenGL moderno (shaders 
 
 ## 2. Descrição da cena e da interação
 
-![Etapa de perfil pessoal](assets/1.png)
+![Cena 3D do trem de carga, dos vagões e do guindaste](assets/1.png)
 
 ### Cena
 
@@ -195,7 +195,8 @@ O shadow mapping tem duas passagens: primeiro, o depth shader grava a profundida
 
 ## 8. Framework da obra e componentes gráficos
 
-A aplicação implementa em PyGame/PyOpenGL as rotinas gráficas necessárias para compor as formas, enviar atributos e uniforms e renderizar a cena:
+O projeto **não utiliza o framework nem exemplos de código do livro**. As
+rotinas gráficas abaixo foram implementadas pela equipe em PyGame/PyOpenGL:
 
 - `math3d.py`: matrizes e transformações.
 - `geometry.py`: malhas de cubo, cilindro e esfera, com configuração de VBO/VAO.
@@ -204,14 +205,18 @@ A aplicação implementa em PyGame/PyOpenGL as rotinas gráficas necessárias pa
 
 Os modelos são composições próprias de cubos, cilindros e esferas; não foram reutilizados modelos externos.
 
+Como o enunciado menciona o framework da obra, esta implementação própria deve
+ser confirmada com o professor. Não listamos o livro como fonte porque ele não
+foi consultado nem utilizado no desenvolvimento.
+
 ## 9. Contribuições individuais
 
 
 
 | Integrante | Contribuições realizadas (arquivos, classes ou tarefas) |
 |------------|----------------------------------------------------------|
-| Pedro Henrique Ramos de Carvvalho | `Refatoração do Codigo e Ajustes finais da Entrega` |
-| Victor Hugo Silva de Assis | `Elaboração do Projeto, estruturação do Codigo e suas Funcionalidades` |
+| Pedro Henrique Ramos de Carvalho | Refatoração do código e ajustes finais da entrega |
+| Victor Hugo Silva de Assis | Elaboração do projeto, estruturação do código e implementação das funcionalidades |
 
 ## 10. Uso de inteligência artificial
 
@@ -225,7 +230,7 @@ Os modelos são composições próprias de cubos, cilindros e esferas; não fora
 
 ## 11. Fontes consultadas
 
-- Material da disciplina `Computação Gráfica - Desenhando Formas com preenchimento.pdf`: atributos de vértice e comunicação entre vertex shader e fragment shader. `[Completar, se disponível: autor, instituição e ano.]`
-- `2026 - Computação Gráfica - Trabalhando Texturas.pdf`: uso de textura e coordenadas UV. `[Completar, se disponível: autor e instituição.]`
-- `Visão - Computação Gráfica.pdf`, `2026 - Computação Gráfica - Aulas 05 e 06.pdf` e `_2026 - Computação Gráfica - Aulas 07 e 08.pdf`: materiais de visão, transformações e pipeline da disciplina. `[Completar, se disponível: autores e instituição.]`
+- Material da disciplina `Computação Gráfica - Desenhando Formas com preenchimento.pdf`: atributos de vértice e comunicação entre vertex shader e fragment shader.
+- `2026 - Computação Gráfica - Trabalhando Texturas.pdf`: uso de textura e coordenadas UV.
+- `Visão - Computação Gráfica.pdf`, `2026 - Computação Gráfica - Aulas 05 e 06.pdf` e `_2026 - Computação Gráfica - Aulas 07 e 08.pdf`: materiais de visão, transformações e pipeline da disciplina.
 - Documentação oficial do Pygame/pygame-ce e do PyOpenGL.
