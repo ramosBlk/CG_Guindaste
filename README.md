@@ -23,6 +23,8 @@ Projeto de Computação Gráfica em Python com PyGame e OpenGL moderno (shaders 
 
 ## 2. Descrição da cena e da interação
 
+![Etapa de perfil pessoal](assets/1.png)
+
 ### Cena
 
 Uma composição ferroviária com uma locomotiva principal e três vagões de carga com carroceria aberta, interior livre e rodas, para que as caixas fiquem visíveis dentro deles. O trilho reto tem 40 unidades e atravessa a cena de uma ponta a outra da janela.
