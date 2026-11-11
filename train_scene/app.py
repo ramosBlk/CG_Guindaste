@@ -164,6 +164,8 @@ def main():
                         running = False
                     elif event.key == pygame.K_p:
                         scene.paused = not scene.paused
+                    elif event.key == pygame.K_h:
+                        scene.controls_hud.toggle()
                     elif event.key in camera_view_keys:
                         scene.camera.set_view(camera_view_keys[event.key])
                     elif event.key == pygame.K_SPACE:
