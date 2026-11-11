@@ -1,6 +1,7 @@
 """Shaders GLSL para iluminacao, textura e shadow mapping."""
 
 VERTEX_SHADER = """#version 330 core
+// Recebe os dados do modelo e os prepara para o shader de fragmento.
 layout(location = 0) in vec3 aPosition;
 layout(location = 1) in vec3 aNormal;
 layout(location = 2) in vec2 aTexCoord;
@@ -13,6 +14,7 @@ out vec3 vWorldNormal;
 out vec2 vTexCoord;
 out vec4 vShadowPosition;
 void main() {
+    // Converte a posicao para o espaco do mundo e calcula a posicao na tela.
     vec4 worldPosition = uModel * vec4(aPosition, 1.0);
     vWorldPosition = worldPosition.xyz;
     vWorldNormal = mat3(transpose(inverse(uModel))) * aNormal;
@@ -37,6 +39,8 @@ uniform bool uUseTexture;
 uniform sampler2D uColorTexture;
 uniform sampler2D uShadowMap;
 out vec4 fragColor;
+
+// Compara a profundidade do fragmento com o mapa para detectar sombras.
 float shadowAmount(vec3 normal, vec3 lightDirection) {
     vec3 projected = vShadowPosition.xyz / vShadowPosition.w;
     projected = projected * 0.5 + 0.5;
@@ -54,15 +58,20 @@ float shadowAmount(vec3 normal, vec3 lightDirection) {
     return shadow / 9.0;
 }
 void main() {
+    // Combina a cor base com a textura, quando houver uma.
     vec3 base = uBaseColor;
     if (uUseTexture) base *= texture(uColorTexture, vTexCoord).rgb;
     vec3 normal = normalize(vWorldNormal);
     vec3 lightDirection = normalize(-uLightDirection);
+
+    // Calcula luz difusa e brilho especular.
     float diffuse = max(dot(normal, lightDirection), 0.0);
     vec3 viewDirection = normalize(uCameraPosition - vWorldPosition);
     vec3 reflected = reflect(-lightDirection, normal);
     float specular = pow(max(dot(viewDirection, reflected), 0.0), uShininess) * 0.22;
     float shadow = shadowAmount(normal, lightDirection);
+
+    // Aplica iluminacao, reduz a luz nas sombras e preserva o brilho proprio.
     vec3 color = base * (0.24 + (1.0 - shadow) * diffuse * 0.76);
     color += (1.0 - shadow) * specular;
     color += base * uEmissive;
@@ -71,6 +80,7 @@ void main() {
 """
 
 DEPTH_VERTEX_SHADER = """#version 330 core
+// Gera a profundidade vista pela luz para criar o mapa de sombras.
 layout(location = 0) in vec3 aPosition;
 uniform mat4 uModel;
 uniform mat4 uLightSpace;
